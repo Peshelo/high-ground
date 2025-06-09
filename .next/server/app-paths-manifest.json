@@ -1,0 +1,13 @@
+{
+  "/(DashboardLayout)/page": "app/(DashboardLayout)/page.js",
+  "/(DashboardLayout)/risk-managment/create-risk/page": "app/(DashboardLayout)/risk-managment/create-risk/page.js",
+  "/(DashboardLayout)/risk-managment/page": "app/(DashboardLayout)/risk-managment/page.js",
+  "/(DashboardLayout)/risk-managment/create-risk/[id]/page": "app/(DashboardLayout)/risk-managment/create-risk/[id]/page.js",
+  "/_not-found/page": "app/_not-found/page.js",
+  "/(DashboardLayout)/risk-managment/risk-categories/page": "app/(DashboardLayout)/risk-managment/risk-categories/page.js",
+  "/(DashboardLayout)/risk-managment/controls/page": "app/(DashboardLayout)/risk-managment/controls/page.js",
+  "/(DashboardLayout)/risk-managment/controls/create/page": "app/(DashboardLayout)/risk-managment/controls/create/page.js",
+  "/(DashboardLayout)/risk-managment/risk/[id]/page": "app/(DashboardLayout)/risk-managment/risk/[id]/page.js",
+  "/(DashboardLayout)/business-units/page": "app/(DashboardLayout)/business-units/page.js",
+  "/(DashboardLayout)/business-units/create/page": "app/(DashboardLayout)/business-units/create/page.js"
+}

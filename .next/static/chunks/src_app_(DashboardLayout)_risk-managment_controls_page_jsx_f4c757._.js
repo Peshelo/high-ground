@@ -1,0 +1,12 @@
+(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push([
+    "static/chunks/src_app_(DashboardLayout)_risk-managment_controls_page_jsx_f4c757._.js",
+    {},
+]);
+(globalThis.TURBOPACK_CHUNK_LISTS = globalThis.TURBOPACK_CHUNK_LISTS || []).push({
+  "path": "static/chunks/src_app_(DashboardLayout)_risk-managment_controls_page_jsx_f4c757._.js",
+  "chunks": [
+    "static/chunks/node_modules_c0c4b6._.js",
+    "static/chunks/src_app_9e3baf._.js"
+  ],
+  "source": "dynamic"
+});

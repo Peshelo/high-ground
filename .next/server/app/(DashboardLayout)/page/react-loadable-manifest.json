@@ -1,0 +1,65 @@
+{
+  "src/app/components/dashboards/modern/MonthlyEarnings.jsx -> react-apexcharts": {
+    "id": "src/app/components/dashboards/modern/MonthlyEarnings.jsx -> react-apexcharts",
+    "files": [
+      "static/chunks/node_modules_next_dist_d29c95._.js",
+      "static/chunks/node_modules_apexcharts_dist_apexcharts_common_aa2010.js",
+      "static/chunks/node_modules_f05f42._.js",
+      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_28e4c2.js"
+    ]
+  },
+  "src/app/components/dashboards/modern/EmployeeSalary.jsx -> react-apexcharts": {
+    "id": "src/app/components/dashboards/modern/EmployeeSalary.jsx -> react-apexcharts",
+    "files": [
+      "static/chunks/node_modules_next_dist_d29c95._.js",
+      "static/chunks/node_modules_apexcharts_dist_apexcharts_common_aa2010.js",
+      "static/chunks/node_modules_f05f42._.js",
+      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_28e4c2.js"
+    ]
+  },
+  "src/app/components/dashboards/modern/Projects.jsx -> react-apexcharts": {
+    "id": "src/app/components/dashboards/modern/Projects.jsx -> react-apexcharts",
+    "files": [
+      "static/chunks/node_modules_next_dist_d29c95._.js",
+      "static/chunks/node_modules_apexcharts_dist_apexcharts_common_aa2010.js",
+      "static/chunks/node_modules_f05f42._.js",
+      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_28e4c2.js"
+    ]
+  },
+  "src/app/components/dashboards/modern/WeeklyStats.jsx -> react-apexcharts": {
+    "id": "src/app/components/dashboards/modern/WeeklyStats.jsx -> react-apexcharts",
+    "files": [
+      "static/chunks/node_modules_next_dist_d29c95._.js",
+      "static/chunks/node_modules_apexcharts_dist_apexcharts_common_aa2010.js",
+      "static/chunks/node_modules_f05f42._.js",
+      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_28e4c2.js"
+    ]
+  },
+  "src/app/components/dashboards/modern/Customers.jsx -> react-apexcharts": {
+    "id": "src/app/components/dashboards/modern/Customers.jsx -> react-apexcharts",
+    "files": [
+      "static/chunks/node_modules_next_dist_d29c95._.js",
+      "static/chunks/node_modules_apexcharts_dist_apexcharts_common_aa2010.js",
+      "static/chunks/node_modules_f05f42._.js",
+      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_28e4c2.js"
+    ]
+  },
+  "src/app/components/dashboards/modern/RevenueUpdates.jsx -> react-apexcharts": {
+    "id": "src/app/components/dashboards/modern/RevenueUpdates.jsx -> react-apexcharts",
+    "files": [
+      "static/chunks/node_modules_next_dist_d29c95._.js",
+      "static/chunks/node_modules_apexcharts_dist_apexcharts_common_aa2010.js",
+      "static/chunks/node_modules_f05f42._.js",
+      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_28e4c2.js"
+    ]
+  },
+  "src/app/components/dashboards/modern/YearlyBreakup.jsx -> react-apexcharts": {
+    "id": "src/app/components/dashboards/modern/YearlyBreakup.jsx -> react-apexcharts",
+    "files": [
+      "static/chunks/node_modules_next_dist_d29c95._.js",
+      "static/chunks/node_modules_apexcharts_dist_apexcharts_common_aa2010.js",
+      "static/chunks/node_modules_f05f42._.js",
+      "static/chunks/node_modules_react-apexcharts_dist_react-apexcharts_min_28e4c2.js"
+    ]
+  }
+}
