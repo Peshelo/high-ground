@@ -16,6 +16,11 @@ const Languages = [
     icon: "/images/flag/icon-flag-en.svg",
     value: "en",
   },
+    {
+    flagname: "Shona (Zimbabwe)",
+    icon: "/images/flag/zim.jpg",
+    value: "sh",
+  },
   {
     flagname: "中国人 (Chinese)",
     icon: "/images/flag/icon-flag-cn.svg",
