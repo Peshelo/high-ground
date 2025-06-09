@@ -1,5 +1,5 @@
 {
   "/(DashboardLayout)/page": "app/(DashboardLayout)/page.js",
   "/(DashboardLayout)/risk-managment/page": "app/(DashboardLayout)/risk-managment/page.js",
-  "/_not-found/page": "app/_not-found/page.js"
+  "/(DashboardLayout)/risk-managment/create-risk/[id]/page": "app/(DashboardLayout)/risk-managment/create-risk/[id]/page.js"
 }

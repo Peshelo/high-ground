@@ -162,6 +162,47 @@ const AddRiskForm = ()=>{
         customerImpactDescription: "",
         affectedBusinessUnitIds: []
     });
+    const primaryRisk = [
+        "STRATEGIC_RISK",
+        "OPERATIONAL_RISK",
+        "PEOPLE_RISK",
+        "FINANCIAL_RISK",
+        "COMPLIANCE_RISK",
+        "TECHNOLOGY_RISK",
+        "REPUTATIONAL_RISK",
+        "CYBER_SECURITY_RISK",
+        "MARKET_RISK",
+        "CREDIT_RISK",
+        "LIQUIDITY_RISK",
+        "DATA_PRIVACY_RISK",
+        "LEGAL_RISK",
+        "ENVIRONMENTAL_RISK",
+        "NONE"
+    ];
+    const secondaryRisk = [
+        "GORVANANCE_RISK",
+        "FINACIAL_REPORTING_RISK",
+        "CAPITAL_ADEQUACY_RISK",
+        "MARKET_RISK",
+        "EARNINGS_RISK",
+        "TAXATION_RISK",
+        "CLIMATE_RELATED_FINANCIAL_RISK",
+        "STRATEGIC_EXECUTION_RISK"
+    ];
+    const tertiaryRisk = [
+        "DATA_BREACH",
+        "SYSTEM_FAILURE",
+        "REGULATORY_NON_COMPLIANCE",
+        "SUPPLY_CHAIN_DISRUPTION",
+        "MARKET_VOLATILITY",
+        "REPUTATIONAL_DAMAGE",
+        "OPERATIONAL_RISK",
+        "FINANCIAL_RISK",
+        "LEGAL_RISK",
+        "ENVIRONMENTAL_RISK",
+        "CYBER_ATTACK",
+        "NONE"
+    ];
     // Form state
     const [formData, setFormData] = __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__.useState({
         title: '',
@@ -169,6 +210,9 @@ const AddRiskForm = ()=>{
         type: 'OPERATIONAL',
         status: 'DRAFT',
         priority: 'MEDIUM',
+        primaryRisk: 'PEOPLE_RISK',
+        secondaryRisk: 'GORVANANCE_RISK',
+        tertiaryRisk: 'DATA_BREACH',
         version: 1,
         categoryId: 0,
         ownerId: 0,
@@ -266,6 +310,9 @@ const AddRiskForm = ()=>{
                     title: riskData.title || '',
                     type: riskData.type || 'OPERATIONAL',
                     categoryId: riskData.categoryId || 0,
+                    primaryRisk: riskData.primaryRisk || '',
+                    secondaryRisk: riskData.secondaryRisk || '',
+                    tertiaryRisk: riskData.tertiaryRisk || '',
                     ownerId: riskData.ownerId || 0,
                     inherentProbability: riskData.inherentProbability || 50,
                     inherentImpact: riskData.inherentImpact || 50,
@@ -639,7 +686,7 @@ const AddRiskForm = ()=>{
                                 children: formData.riskId ? `Risk: ${formData.riskId}` : 'Create New Risk'
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 550,
+                                lineNumber: 599,
                                 columnNumber: 6
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -656,14 +703,14 @@ const AddRiskForm = ()=>{
                                             size: "1.1rem"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 559,
+                                            lineNumber: 608,
                                             columnNumber: 26
                                         }, void 0),
                                         disabled: isLoading,
                                         children: isLoading ? 'Saving...' : 'Save Draft'
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 555,
+                                        lineNumber: 604,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Button$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -673,26 +720,26 @@ const AddRiskForm = ()=>{
                                             size: "1.1rem"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 568,
+                                            lineNumber: 617,
                                             columnNumber: 26
                                         }, void 0),
                                         disabled: isLoading,
                                         children: isLoading ? 'Submitting...' : 'Submit Risk'
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 565,
+                                        lineNumber: 614,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 554,
+                                lineNumber: 603,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 549,
+                        lineNumber: 598,
                         columnNumber: 12
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Tabs$2f$Tabs$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Tabs$3e$__["Tabs"], {
@@ -709,41 +756,41 @@ const AddRiskForm = ()=>{
                                 label: "Basic Information"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 583,
+                                lineNumber: 632,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Tab$2f$Tab$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Tab$3e$__["Tab"], {
                                 label: "Risk Assessment"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 584,
+                                lineNumber: 633,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Tab$2f$Tab$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Tab$3e$__["Tab"], {
                                 label: "Associated Controls"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 585,
+                                lineNumber: 634,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Tab$2f$Tab$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Tab$3e$__["Tab"], {
                                 label: "Related Incidents"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 586,
+                                lineNumber: 635,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Tab$2f$Tab$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Tab$3e$__["Tab"], {
                                 label: "Affected Units"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 587,
+                                lineNumber: 636,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 575,
+                        lineNumber: 624,
                         columnNumber: 9
                     }, this),
                     activeTab === 0 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -760,7 +807,7 @@ const AddRiskForm = ()=>{
                                         children: "Basic Information"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 594,
+                                        lineNumber: 643,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Divider$2f$Divider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Divider$3e$__["Divider"], {
@@ -769,13 +816,13 @@ const AddRiskForm = ()=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 597,
+                                        lineNumber: 646,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 593,
+                                lineNumber: 642,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -791,12 +838,12 @@ const AddRiskForm = ()=>{
                                     helperText: errors.title ? 'Title is required' : ''
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 601,
+                                    lineNumber: 650,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 600,
+                                lineNumber: 649,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -811,7 +858,7 @@ const AddRiskForm = ()=>{
                                             children: "Category *"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 613,
+                                            lineNumber: 662,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -823,12 +870,12 @@ const AddRiskForm = ()=>{
                                                     children: category.name
                                                 }, category.id, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 620,
+                                                    lineNumber: 669,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 614,
+                                            lineNumber: 663,
                                             columnNumber: 17
                                         }, this),
                                         errors.categoryId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -837,18 +884,18 @@ const AddRiskForm = ()=>{
                                             children: "Category is required"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 625,
+                                            lineNumber: 674,
                                             columnNumber: 39
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 612,
+                                    lineNumber: 661,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 611,
+                                lineNumber: 660,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -862,7 +909,7 @@ const AddRiskForm = ()=>{
                                             children: "Type"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 631,
+                                            lineNumber: 680,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -875,7 +922,7 @@ const AddRiskForm = ()=>{
                                                     children: "Strategic"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 637,
+                                                    lineNumber: 686,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -883,7 +930,7 @@ const AddRiskForm = ()=>{
                                                     children: "Operational"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 638,
+                                                    lineNumber: 687,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -891,7 +938,7 @@ const AddRiskForm = ()=>{
                                                     children: "Financial"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 639,
+                                                    lineNumber: 688,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -899,7 +946,7 @@ const AddRiskForm = ()=>{
                                                     children: "Compliance"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 640,
+                                                    lineNumber: 689,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -907,24 +954,24 @@ const AddRiskForm = ()=>{
                                                     children: "Technology"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 641,
+                                                    lineNumber: 690,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 632,
+                                            lineNumber: 681,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 630,
+                                    lineNumber: 679,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 629,
+                                lineNumber: 678,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -938,7 +985,7 @@ const AddRiskForm = ()=>{
                                             children: "Priority"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 648,
+                                            lineNumber: 697,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -951,7 +998,7 @@ const AddRiskForm = ()=>{
                                                     children: "Critical"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 654,
+                                                    lineNumber: 703,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -959,7 +1006,7 @@ const AddRiskForm = ()=>{
                                                     children: "High"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 655,
+                                                    lineNumber: 704,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -967,7 +1014,7 @@ const AddRiskForm = ()=>{
                                                     children: "Medium"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 656,
+                                                    lineNumber: 705,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -975,25 +1022,151 @@ const AddRiskForm = ()=>{
                                                     children: "Low"
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 657,
+                                                    lineNumber: 706,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 649,
+                                            lineNumber: 698,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 647,
+                                    lineNumber: 696,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 646,
+                                lineNumber: 695,
                                 columnNumber: 13
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
+                                item: true,
+                                xs: 12,
+                                md: 6,
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$FormControl$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
+                                    fullWidth: true,
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$InputLabel$2f$InputLabel$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__InputLabel$3e$__["InputLabel"], {
+                                            children: "Primary Risk"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                            lineNumber: 712,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
+                                            value: formData.primaryRisk,
+                                            label: "Primary Risk",
+                                            onChange: handleChange('primaryRisk'),
+                                            children: primaryRisk.map((risk)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
+                                                    value: risk,
+                                                    children: risk.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (c)=>c.toUpperCase())
+                                                }, risk, false, {
+                                                    fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                                    lineNumber: 720,
+                                                    columnNumber: 21
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                            lineNumber: 713,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                    lineNumber: 711,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                lineNumber: 710,
+                                columnNumber: 14
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
+                                item: true,
+                                xs: 12,
+                                md: 6,
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$FormControl$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
+                                    fullWidth: true,
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$InputLabel$2f$InputLabel$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__InputLabel$3e$__["InputLabel"], {
+                                            children: "Secondary Risk"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                            lineNumber: 730,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
+                                            value: formData.secondaryRisk,
+                                            label: "Secondary Risk",
+                                            onChange: handleChange('secondaryRisk'),
+                                            children: secondaryRisk.map((risk)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
+                                                    value: risk,
+                                                    children: risk.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (c)=>c.toUpperCase())
+                                                }, risk, false, {
+                                                    fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                                    lineNumber: 738,
+                                                    columnNumber: 23
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                            lineNumber: 731,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                    lineNumber: 729,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                lineNumber: 728,
+                                columnNumber: 14
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
+                                item: true,
+                                xs: 12,
+                                md: 6,
+                                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$FormControl$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
+                                    fullWidth: true,
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$InputLabel$2f$InputLabel$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__InputLabel$3e$__["InputLabel"], {
+                                            children: "Tertiary Risk"
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                            lineNumber: 749,
+                                            columnNumber: 17
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
+                                            value: formData.tertiaryRisk,
+                                            label: "Tertiary Risk",
+                                            onChange: handleChange('tertiaryRisk'),
+                                            children: tertiaryRisk.map((risk)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
+                                                    value: risk,
+                                                    children: risk.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, (c)=>c.toUpperCase())
+                                                }, risk, false, {
+                                                    fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                                    lineNumber: 757,
+                                                    columnNumber: 21
+                                                }, this))
+                                        }, void 0, false, {
+                                            fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                            lineNumber: 750,
+                                            columnNumber: 17
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                    lineNumber: 748,
+                                    columnNumber: 15
+                                }, this)
+                            }, void 0, false, {
+                                fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
+                                lineNumber: 747,
+                                columnNumber: 14
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
                                 item: true,
@@ -1007,7 +1180,7 @@ const AddRiskForm = ()=>{
                                             children: "Owner *"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 664,
+                                            lineNumber: 768,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -1033,7 +1206,7 @@ const AddRiskForm = ()=>{
                                                                 ]
                                                             }, void 0, true, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 673,
+                                                                lineNumber: 777,
                                                                 columnNumber: 25
                                                             }, this),
                                                             user.firstName,
@@ -1045,17 +1218,17 @@ const AddRiskForm = ()=>{
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 672,
+                                                        lineNumber: 776,
                                                         columnNumber: 23
                                                     }, this)
                                                 }, user.id, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 671,
+                                                    lineNumber: 775,
                                                     columnNumber: 21
                                                 }, this))
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 665,
+                                            lineNumber: 769,
                                             columnNumber: 17
                                         }, this),
                                         errors.ownerId && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -1064,18 +1237,18 @@ const AddRiskForm = ()=>{
                                             children: "Owner is required"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 681,
+                                            lineNumber: 785,
                                             columnNumber: 36
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 663,
+                                    lineNumber: 767,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 662,
+                                lineNumber: 766,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1093,12 +1266,12 @@ const AddRiskForm = ()=>{
                                     onChange: handleChange('identifiedDate')
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 686,
+                                    lineNumber: 790,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 685,
+                                lineNumber: 789,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1115,12 +1288,12 @@ const AddRiskForm = ()=>{
                                     helperText: errors.description ? 'Description is required' : ''
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 697,
+                                    lineNumber: 801,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 696,
+                                lineNumber: 800,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1135,13 +1308,13 @@ const AddRiskForm = ()=>{
                                                 onChange: handleChange('regulatoryRequirement')
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 713,
+                                                lineNumber: 817,
                                                 columnNumber: 21
                                             }, void 0),
                                             label: "Regulatory Requirement"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 711,
+                                            lineNumber: 815,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$FormControlLabel$2f$FormControlLabel$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControlLabel$3e$__["FormControlLabel"], {
@@ -1150,30 +1323,30 @@ const AddRiskForm = ()=>{
                                                 onChange: handleChange('complianceRelated')
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 722,
+                                                lineNumber: 826,
                                                 columnNumber: 21
                                             }, void 0),
                                             label: "Compliance Related"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 720,
+                                            lineNumber: 824,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 710,
+                                    lineNumber: 814,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 709,
+                                lineNumber: 813,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 592,
+                        lineNumber: 641,
                         columnNumber: 11
                     }, this),
                     activeTab === 1 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1190,7 +1363,7 @@ const AddRiskForm = ()=>{
                                         children: "Risk Assessment"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 738,
+                                        lineNumber: 842,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Divider$2f$Divider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Divider$3e$__["Divider"], {
@@ -1199,13 +1372,13 @@ const AddRiskForm = ()=>{
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 741,
+                                        lineNumber: 845,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 737,
+                                lineNumber: 841,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1219,7 +1392,7 @@ const AddRiskForm = ()=>{
                                         children: "Inherent Risk Assessment"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 745,
+                                        lineNumber: 849,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -1236,7 +1409,7 @@ const AddRiskForm = ()=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 750,
+                                                lineNumber: 854,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Slider$2f$Slider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Slider$3e$__["Slider"], {
@@ -1247,13 +1420,13 @@ const AddRiskForm = ()=>{
                                                 valueLabelDisplay: "auto"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 753,
+                                                lineNumber: 857,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 749,
+                                        lineNumber: 853,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -1270,7 +1443,7 @@ const AddRiskForm = ()=>{
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 763,
+                                                lineNumber: 867,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Slider$2f$Slider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Slider$3e$__["Slider"], {
@@ -1281,13 +1454,13 @@ const AddRiskForm = ()=>{
                                                 valueLabelDisplay: "auto"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 766,
+                                                lineNumber: 870,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 762,
+                                        lineNumber: 866,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -1300,7 +1473,7 @@ const AddRiskForm = ()=>{
                                                 children: "Risk Rating:"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 776,
+                                                lineNumber: 880,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Chip$2f$Chip$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Chip$3e$__["Chip"], {
@@ -1311,19 +1484,19 @@ const AddRiskForm = ()=>{
                                                 }
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 777,
+                                                lineNumber: 881,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 775,
+                                        lineNumber: 879,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 744,
+                                lineNumber: 848,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1337,7 +1510,7 @@ const AddRiskForm = ()=>{
                                         children: "Financial Impact"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 790,
+                                        lineNumber: 894,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TextField$2f$TextField$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TextField$3e$__["TextField"], {
@@ -1355,13 +1528,13 @@ const AddRiskForm = ()=>{
                                                 children: "$"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 802,
+                                                lineNumber: 906,
                                                 columnNumber: 35
                                             }, void 0)
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 794,
+                                        lineNumber: 898,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$FormControl$2f$FormControl$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__FormControl$3e$__["FormControl"], {
@@ -1374,7 +1547,7 @@ const AddRiskForm = ()=>{
                                                 children: "Currency"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 807,
+                                                lineNumber: 911,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -1387,7 +1560,7 @@ const AddRiskForm = ()=>{
                                                         children: "USD"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 813,
+                                                        lineNumber: 917,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -1395,7 +1568,7 @@ const AddRiskForm = ()=>{
                                                         children: "EUR"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 814,
+                                                        lineNumber: 918,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -1403,7 +1576,7 @@ const AddRiskForm = ()=>{
                                                         children: "GBP"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 815,
+                                                        lineNumber: 919,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -1411,19 +1584,19 @@ const AddRiskForm = ()=>{
                                                         children: "ZAR"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 816,
+                                                        lineNumber: 920,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 808,
+                                                lineNumber: 912,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 806,
+                                        lineNumber: 910,
                                         columnNumber: 15
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TextField$2f$TextField$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TextField$3e$__["TextField"], {
@@ -1437,13 +1610,13 @@ const AddRiskForm = ()=>{
                                         onChange: handleChange('nextAssessmentDate')
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 820,
+                                        lineNumber: 924,
                                         columnNumber: 15
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 789,
+                                lineNumber: 893,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1458,12 +1631,12 @@ const AddRiskForm = ()=>{
                                     onChange: handleChange('rootCause')
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 831,
+                                    lineNumber: 935,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 830,
+                                lineNumber: 934,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1478,12 +1651,12 @@ const AddRiskForm = ()=>{
                                     onChange: handleChange('consequences')
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 842,
+                                    lineNumber: 946,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 841,
+                                lineNumber: 945,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1498,12 +1671,12 @@ const AddRiskForm = ()=>{
                                     onChange: handleChange('assumptions')
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 853,
+                                    lineNumber: 957,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 852,
+                                lineNumber: 956,
                                 columnNumber: 13
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1518,18 +1691,18 @@ const AddRiskForm = ()=>{
                                     onChange: handleChange('externalFactors')
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 864,
+                                    lineNumber: 968,
                                     columnNumber: 15
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 863,
+                                lineNumber: 967,
                                 columnNumber: 13
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 736,
+                        lineNumber: 840,
                         columnNumber: 11
                     }, this),
                     activeTab === 2 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1545,7 +1718,7 @@ const AddRiskForm = ()=>{
                                     children: "Associated Controls"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 880,
+                                    lineNumber: 984,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Divider$2f$Divider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Divider$3e$__["Divider"], {
@@ -1554,7 +1727,7 @@ const AddRiskForm = ()=>{
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 883,
+                                    lineNumber: 987,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -1574,18 +1747,18 @@ const AddRiskForm = ()=>{
                                                         size: "1rem"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 892,
+                                                        lineNumber: 996,
                                                         columnNumber: 25
                                                     }, void 0)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 891,
+                                                    lineNumber: 995,
                                                     columnNumber: 23
                                                 }, void 0)
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 886,
+                                            lineNumber: 990,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Button$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -1594,20 +1767,20 @@ const AddRiskForm = ()=>{
                                                 size: "1rem"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 899,
+                                                lineNumber: 1003,
                                                 columnNumber: 30
                                             }, void 0),
                                             onClick: ()=>setOpenControlModal(true),
                                             children: "Add New Control"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 897,
+                                            lineNumber: 1001,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 885,
+                                    lineNumber: 989,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableContainer$2f$TableContainer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableContainer$3e$__["TableContainer"], {
@@ -1638,58 +1811,58 @@ const AddRiskForm = ()=>{
                                                                     }
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 911,
+                                                                    lineNumber: 1015,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 910,
+                                                                lineNumber: 1014,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Name"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 935,
+                                                                lineNumber: 1039,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Type"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 936,
+                                                                lineNumber: 1040,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Nature"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 937,
+                                                                lineNumber: 1041,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Effectiveness"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 938,
+                                                                lineNumber: 1042,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Owner"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 939,
+                                                                lineNumber: 1043,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 909,
+                                                        lineNumber: 1013,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 908,
+                                                    lineNumber: 1012,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableBody$2f$TableBody$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableBody$3e$__["TableBody"], {
@@ -1702,33 +1875,33 @@ const AddRiskForm = ()=>{
                                                                         onChange: ()=>handleControlSelect(control.id)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                        lineNumber: 948,
+                                                                        lineNumber: 1052,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 947,
+                                                                    lineNumber: 1051,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                     children: control.name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 953,
+                                                                    lineNumber: 1057,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                     children: control.controlType
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 954,
+                                                                    lineNumber: 1058,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                     children: control.controlNature
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 955,
+                                                                    lineNumber: 1059,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
@@ -1749,12 +1922,12 @@ const AddRiskForm = ()=>{
                                                                                     color: control.effectiveness >= 80 ? 'success' : control.effectiveness >= 50 ? 'warning' : 'error'
                                                                                 }, void 0, false, {
                                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                                    lineNumber: 959,
+                                                                                    lineNumber: 1063,
                                                                                     columnNumber: 33
                                                                                 }, this)
                                                                             }, void 0, false, {
                                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                                lineNumber: 958,
+                                                                                lineNumber: 1062,
                                                                                 columnNumber: 31
                                                                             }, this),
                                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Typography$3e$__["Typography"], {
@@ -1765,42 +1938,42 @@ const AddRiskForm = ()=>{
                                                                                 ]
                                                                             }, void 0, true, {
                                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                                lineNumber: 968,
+                                                                                lineNumber: 1072,
                                                                                 columnNumber: 31
                                                                             }, this)
                                                                         ]
                                                                     }, void 0, true, {
                                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                        lineNumber: 957,
+                                                                        lineNumber: 1061,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 956,
+                                                                    lineNumber: 1060,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                     children: users.find((u)=>u.id === control.ownerId)?.firstName || 'Unassigned'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 971,
+                                                                    lineNumber: 1075,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, control.id, true, {
                                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                            lineNumber: 946,
+                                                            lineNumber: 1050,
                                                             columnNumber: 25
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 942,
+                                                    lineNumber: 1046,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 907,
+                                            lineNumber: 1011,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TablePagination$2f$TablePagination$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TablePagination$3e$__["TablePagination"], {
@@ -1817,24 +1990,24 @@ const AddRiskForm = ()=>{
                                             onRowsPerPageChange: handleChangeRowsPerPage
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 978,
+                                            lineNumber: 1082,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 906,
+                                    lineNumber: 1010,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                            lineNumber: 879,
+                            lineNumber: 983,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 878,
+                        lineNumber: 982,
                         columnNumber: 11
                     }, this),
                     activeTab === 3 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -1850,7 +2023,7 @@ const AddRiskForm = ()=>{
                                     children: "Related Incidents"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 996,
+                                    lineNumber: 1100,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Divider$2f$Divider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Divider$3e$__["Divider"], {
@@ -1859,7 +2032,7 @@ const AddRiskForm = ()=>{
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 999,
+                                    lineNumber: 1103,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -1879,18 +2052,18 @@ const AddRiskForm = ()=>{
                                                         size: "1rem"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1008,
+                                                        lineNumber: 1112,
                                                         columnNumber: 25
                                                     }, void 0)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 1007,
+                                                    lineNumber: 1111,
                                                     columnNumber: 23
                                                 }, void 0)
                                             }
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1002,
+                                            lineNumber: 1106,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Button$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -1899,20 +2072,20 @@ const AddRiskForm = ()=>{
                                                 size: "1rem"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1015,
+                                                lineNumber: 1119,
                                                 columnNumber: 30
                                             }, void 0),
                                             onClick: ()=>setOpenIncidentModal(true),
                                             children: "Add New Incident"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1013,
+                                            lineNumber: 1117,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1001,
+                                    lineNumber: 1105,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableContainer$2f$TableContainer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableContainer$3e$__["TableContainer"], {
@@ -1943,58 +2116,58 @@ const AddRiskForm = ()=>{
                                                                     }
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1027,
+                                                                    lineNumber: 1131,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1026,
+                                                                lineNumber: 1130,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Title"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1051,
+                                                                lineNumber: 1155,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Severity"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1052,
+                                                                lineNumber: 1156,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Date"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1053,
+                                                                lineNumber: 1157,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Financial Loss"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1054,
+                                                                lineNumber: 1158,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Status"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1055,
+                                                                lineNumber: 1159,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1025,
+                                                        lineNumber: 1129,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 1024,
+                                                    lineNumber: 1128,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableBody$2f$TableBody$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableBody$3e$__["TableBody"], {
@@ -2007,19 +2180,19 @@ const AddRiskForm = ()=>{
                                                                         onChange: ()=>handleIncidentSelect(incident.id)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                        lineNumber: 1064,
+                                                                        lineNumber: 1168,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1063,
+                                                                    lineNumber: 1167,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                     children: incident.title
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1069,
+                                                                    lineNumber: 1173,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
@@ -2029,19 +2202,19 @@ const AddRiskForm = ()=>{
                                                                         color: incident.severity === 'CRITICAL' ? 'error' : incident.severity === 'HIGH' ? 'warning' : incident.severity === 'MEDIUM' ? 'info' : 'success'
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                        lineNumber: 1071,
+                                                                        lineNumber: 1175,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1070,
+                                                                    lineNumber: 1174,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                     children: new Date(incident.incidentDate).toLocaleDateString()
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1081,
+                                                                    lineNumber: 1185,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
@@ -2051,31 +2224,31 @@ const AddRiskForm = ()=>{
                                                                     ]
                                                                 }, void 0, true, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1084,
+                                                                    lineNumber: 1188,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                     children: incident.status
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1087,
+                                                                    lineNumber: 1191,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, incident.id, true, {
                                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                            lineNumber: 1062,
+                                                            lineNumber: 1166,
                                                             columnNumber: 25
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 1058,
+                                                    lineNumber: 1162,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1023,
+                                            lineNumber: 1127,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TablePagination$2f$TablePagination$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TablePagination$3e$__["TablePagination"], {
@@ -2092,24 +2265,24 @@ const AddRiskForm = ()=>{
                                             onRowsPerPageChange: handleChangeRowsPerPage
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1092,
+                                            lineNumber: 1196,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1022,
+                                    lineNumber: 1126,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                            lineNumber: 995,
+                            lineNumber: 1099,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 994,
+                        lineNumber: 1098,
                         columnNumber: 11
                     }, this),
                     activeTab === 4 && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2125,7 +2298,7 @@ const AddRiskForm = ()=>{
                                     children: "Affected Business Units"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1110,
+                                    lineNumber: 1214,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Divider$2f$Divider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Divider$3e$__["Divider"], {
@@ -2134,7 +2307,7 @@ const AddRiskForm = ()=>{
                                     }
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1113,
+                                    lineNumber: 1217,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableContainer$2f$TableContainer$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableContainer$3e$__["TableContainer"], {
@@ -2165,44 +2338,44 @@ const AddRiskForm = ()=>{
                                                                     }
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1120,
+                                                                    lineNumber: 1224,
                                                                     columnNumber: 25
                                                                 }, this)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1119,
+                                                                lineNumber: 1223,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Name"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1144,
+                                                                lineNumber: 1248,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Code"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1145,
+                                                                lineNumber: 1249,
                                                                 columnNumber: 23
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                 children: "Manager"
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1146,
+                                                                lineNumber: 1250,
                                                                 columnNumber: 23
                                                             }, this)
                                                         ]
                                                     }, void 0, true, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1118,
+                                                        lineNumber: 1222,
                                                         columnNumber: 21
                                                     }, this)
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 1117,
+                                                    lineNumber: 1221,
                                                     columnNumber: 19
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableBody$2f$TableBody$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableBody$3e$__["TableBody"], {
@@ -2215,50 +2388,50 @@ const AddRiskForm = ()=>{
                                                                         onChange: ()=>handleBusinessUnitSelect(unit.id)
                                                                     }, void 0, false, {
                                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                        lineNumber: 1155,
+                                                                        lineNumber: 1259,
                                                                         columnNumber: 29
                                                                     }, this)
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1154,
+                                                                    lineNumber: 1258,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                     children: unit.name
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1160,
+                                                                    lineNumber: 1264,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                     children: unit.code
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1161,
+                                                                    lineNumber: 1265,
                                                                     columnNumber: 27
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TableCell$2f$TableCell$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TableCell$3e$__["TableCell"], {
                                                                     children: users.find((u)=>u.id === unit.managerId)?.firstName || 'Unassigned'
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                    lineNumber: 1162,
+                                                                    lineNumber: 1266,
                                                                     columnNumber: 27
                                                                 }, this)
                                                             ]
                                                         }, unit.id, true, {
                                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                            lineNumber: 1153,
+                                                            lineNumber: 1257,
                                                             columnNumber: 25
                                                         }, this))
                                                 }, void 0, false, {
                                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                    lineNumber: 1149,
+                                                    lineNumber: 1253,
                                                     columnNumber: 19
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1116,
+                                            lineNumber: 1220,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$TablePagination$2f$TablePagination$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__TablePagination$3e$__["TablePagination"], {
@@ -2275,24 +2448,24 @@ const AddRiskForm = ()=>{
                                             onRowsPerPageChange: handleChangeRowsPerPage
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1169,
+                                            lineNumber: 1273,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1115,
+                                    lineNumber: 1219,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                            lineNumber: 1109,
+                            lineNumber: 1213,
                             columnNumber: 13
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 1108,
+                        lineNumber: 1212,
                         columnNumber: 11
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -2309,14 +2482,14 @@ const AddRiskForm = ()=>{
                                     size: "1.1rem"
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1188,
+                                    lineNumber: 1292,
                                     columnNumber: 24
                                 }, void 0),
                                 disabled: isLoading,
                                 children: "Cancel"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 1185,
+                                lineNumber: 1289,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Box$2f$Box$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Box$3e$__["Box"], {
@@ -2333,14 +2506,14 @@ const AddRiskForm = ()=>{
                                             size: "1.1rem"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1199,
+                                            lineNumber: 1303,
                                             columnNumber: 26
                                         }, void 0),
                                         disabled: activeTab === 0 || isLoading,
                                         children: "Previous"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1195,
+                                        lineNumber: 1299,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Button$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -2351,32 +2524,32 @@ const AddRiskForm = ()=>{
                                             size: "1.1rem"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1209,
+                                            lineNumber: 1313,
                                             columnNumber: 26
                                         }, void 0),
                                         disabled: activeTab === 4 || isLoading,
                                         children: "Next"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1205,
+                                        lineNumber: 1309,
                                         columnNumber: 13
                                     }, this)
                                 ]
                             }, void 0, true, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 1194,
+                                lineNumber: 1298,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 1184,
+                        lineNumber: 1288,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                lineNumber: 547,
+                lineNumber: 596,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Dialog$2f$Dialog$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Dialog$3e$__["Dialog"], {
@@ -2389,7 +2562,7 @@ const AddRiskForm = ()=>{
                         children: "Add New Control"
                     }, void 0, false, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 1220,
+                        lineNumber: 1324,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$DialogContent$2f$DialogContent$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__DialogContent$3e$__["DialogContent"], {
@@ -2413,12 +2586,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1224,
+                                        lineNumber: 1328,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1223,
+                                    lineNumber: 1327,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2436,12 +2609,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1232,
+                                        lineNumber: 1336,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1231,
+                                    lineNumber: 1335,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2455,7 +2628,7 @@ const AddRiskForm = ()=>{
                                                 children: "Control Type"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1243,
+                                                lineNumber: 1347,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -2471,7 +2644,7 @@ const AddRiskForm = ()=>{
                                                         children: "Preventive"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1249,
+                                                        lineNumber: 1353,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -2479,7 +2652,7 @@ const AddRiskForm = ()=>{
                                                         children: "Detective"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1250,
+                                                        lineNumber: 1354,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -2487,24 +2660,24 @@ const AddRiskForm = ()=>{
                                                         children: "Corrective"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1251,
+                                                        lineNumber: 1355,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1244,
+                                                lineNumber: 1348,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1242,
+                                        lineNumber: 1346,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1241,
+                                    lineNumber: 1345,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2518,7 +2691,7 @@ const AddRiskForm = ()=>{
                                                 children: "Control Nature"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1257,
+                                                lineNumber: 1361,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -2534,7 +2707,7 @@ const AddRiskForm = ()=>{
                                                         children: "Manual"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1263,
+                                                        lineNumber: 1367,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -2542,7 +2715,7 @@ const AddRiskForm = ()=>{
                                                         children: "Automated"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1264,
+                                                        lineNumber: 1368,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -2550,24 +2723,24 @@ const AddRiskForm = ()=>{
                                                         children: "IT Dependent"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1265,
+                                                        lineNumber: 1369,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1258,
+                                                lineNumber: 1362,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1256,
+                                        lineNumber: 1360,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1255,
+                                    lineNumber: 1359,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2587,12 +2760,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1271,
+                                        lineNumber: 1375,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1270,
+                                    lineNumber: 1374,
                                     columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2612,12 +2785,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1282,
+                                        lineNumber: 1386,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1280,
+                                    lineNumber: 1384,
                                     columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2637,12 +2810,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1292,
+                                        lineNumber: 1396,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1291,
+                                    lineNumber: 1395,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2662,12 +2835,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1302,
+                                        lineNumber: 1406,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1301,
+                                    lineNumber: 1405,
                                     columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2683,12 +2856,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1313,
+                                        lineNumber: 1417,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1312,
+                                    lineNumber: 1416,
                                     columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2704,12 +2877,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1321,
+                                        lineNumber: 1425,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1320,
+                                    lineNumber: 1424,
                                     columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2725,12 +2898,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1329,
+                                        lineNumber: 1433,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1328,
+                                    lineNumber: 1432,
                                     columnNumber: 1
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2746,12 +2919,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1337,
+                                        lineNumber: 1441,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1336,
+                                    lineNumber: 1440,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2768,7 +2941,7 @@ const AddRiskForm = ()=>{
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1346,
+                                            lineNumber: 1450,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Slider$2f$Slider$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Slider$3e$__["Slider"], {
@@ -2782,13 +2955,13 @@ const AddRiskForm = ()=>{
                                             valueLabelDisplay: "auto"
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1349,
+                                            lineNumber: 1453,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1345,
+                                    lineNumber: 1449,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2801,7 +2974,7 @@ const AddRiskForm = ()=>{
                                                 children: "Owner"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1359,
+                                                lineNumber: 1463,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -2820,34 +2993,34 @@ const AddRiskForm = ()=>{
                                                         ]
                                                     }, user.id, true, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1366,
+                                                        lineNumber: 1470,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1360,
+                                                lineNumber: 1464,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1358,
+                                        lineNumber: 1462,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1357,
+                                    lineNumber: 1461,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                            lineNumber: 1222,
+                            lineNumber: 1326,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 1221,
+                        lineNumber: 1325,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$DialogActions$2f$DialogActions$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__DialogActions$3e$__["DialogActions"], {
@@ -2857,7 +3030,7 @@ const AddRiskForm = ()=>{
                                 children: "Cancel"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 1376,
+                                lineNumber: 1480,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Button$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -2867,19 +3040,19 @@ const AddRiskForm = ()=>{
                                 children: isLoading ? 'Adding...' : 'Add Control'
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 1377,
+                                lineNumber: 1481,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 1375,
+                        lineNumber: 1479,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                lineNumber: 1219,
+                lineNumber: 1323,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Dialog$2f$Dialog$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Dialog$3e$__["Dialog"], {
@@ -2892,7 +3065,7 @@ const AddRiskForm = ()=>{
                         children: "Add New Incident"
                     }, void 0, false, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 1389,
+                        lineNumber: 1493,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$DialogContent$2f$DialogContent$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__DialogContent$3e$__["DialogContent"], {
@@ -2916,12 +3089,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1393,
+                                        lineNumber: 1497,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1392,
+                                    lineNumber: 1496,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2939,12 +3112,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1401,
+                                        lineNumber: 1505,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1400,
+                                    lineNumber: 1504,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -2958,7 +3131,7 @@ const AddRiskForm = ()=>{
                                                 children: "Severity"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1412,
+                                                lineNumber: 1516,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -2974,7 +3147,7 @@ const AddRiskForm = ()=>{
                                                         children: "Critical"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1418,
+                                                        lineNumber: 1522,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -2982,7 +3155,7 @@ const AddRiskForm = ()=>{
                                                         children: "High"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1419,
+                                                        lineNumber: 1523,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -2990,7 +3163,7 @@ const AddRiskForm = ()=>{
                                                         children: "Medium"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1420,
+                                                        lineNumber: 1524,
                                                         columnNumber: 19
                                                     }, this),
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$MenuItem$2f$MenuItem$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__MenuItem$3e$__["MenuItem"], {
@@ -2998,24 +3171,24 @@ const AddRiskForm = ()=>{
                                                         children: "Low"
                                                     }, void 0, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1421,
+                                                        lineNumber: 1525,
                                                         columnNumber: 19
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1413,
+                                                lineNumber: 1517,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1411,
+                                        lineNumber: 1515,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1410,
+                                    lineNumber: 1514,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3037,18 +3210,18 @@ const AddRiskForm = ()=>{
                                                 children: "$"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1433,
+                                                lineNumber: 1537,
                                                 columnNumber: 35
                                             }, void 0)
                                         }
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1426,
+                                        lineNumber: 1530,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1425,
+                                    lineNumber: 1529,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3069,12 +3242,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1438,
+                                        lineNumber: 1542,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1437,
+                                    lineNumber: 1541,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3095,12 +3268,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1448,
+                                        lineNumber: 1552,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1447,
+                                    lineNumber: 1551,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3113,7 +3286,7 @@ const AddRiskForm = ()=>{
                                                 children: "Status"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1459,
+                                                lineNumber: 1563,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -3128,23 +3301,23 @@ const AddRiskForm = ()=>{
                                                         children: status.charAt(0).toUpperCase() + status.slice(1)
                                                     }, status, false, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1467,
+                                                        lineNumber: 1571,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1460,
+                                                lineNumber: 1564,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1458,
+                                        lineNumber: 1562,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1457,
+                                    lineNumber: 1561,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3164,12 +3337,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1477,
+                                        lineNumber: 1581,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1476,
+                                    lineNumber: 1580,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3187,12 +3360,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1487,
+                                        lineNumber: 1591,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1486,
+                                    lineNumber: 1590,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3210,12 +3383,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1497,
+                                        lineNumber: 1601,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1496,
+                                    lineNumber: 1600,
                                     columnNumber: 9
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3231,18 +3404,18 @@ const AddRiskForm = ()=>{
                                                 })
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1510,
+                                            lineNumber: 1614,
                                             columnNumber: 19
                                         }, void 0),
                                         label: "Regulatory Notification Required"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1508,
+                                        lineNumber: 1612,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1507,
+                                    lineNumber: 1611,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3258,18 +3431,18 @@ const AddRiskForm = ()=>{
                                                 })
                                         }, void 0, false, {
                                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                            lineNumber: 1522,
+                                            lineNumber: 1626,
                                             columnNumber: 19
                                         }, void 0),
                                         label: "Customer Impact Notification Required"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1520,
+                                        lineNumber: 1624,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1519,
+                                    lineNumber: 1623,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3287,12 +3460,12 @@ const AddRiskForm = ()=>{
                                             })
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1532,
+                                        lineNumber: 1636,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1531,
+                                    lineNumber: 1635,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3305,7 +3478,7 @@ const AddRiskForm = ()=>{
                                                 children: "Affected Business Units"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1544,
+                                                lineNumber: 1648,
                                                 columnNumber: 19
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -3323,36 +3496,36 @@ const AddRiskForm = ()=>{
                                                                 checked: newIncident.affectedBusinessUnitIds.includes(unit.id)
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1555,
+                                                                lineNumber: 1659,
                                                                 columnNumber: 25
                                                             }, this),
                                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$ListItemText$2f$ListItemText$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ListItemText$3e$__["ListItemText"], {
                                                                 primary: unit.name
                                                             }, void 0, false, {
                                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                                lineNumber: 1558,
+                                                                lineNumber: 1662,
                                                                 columnNumber: 25
                                                             }, this)
                                                         ]
                                                     }, unit.id, true, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1554,
+                                                        lineNumber: 1658,
                                                         columnNumber: 23
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1545,
+                                                lineNumber: 1649,
                                                 columnNumber: 19
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1543,
+                                        lineNumber: 1647,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1542,
+                                    lineNumber: 1646,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Grid$2f$Grid$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Grid$3e$__["Grid"], {
@@ -3365,7 +3538,7 @@ const AddRiskForm = ()=>{
                                                 children: "Reporter"
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1569,
+                                                lineNumber: 1673,
                                                 columnNumber: 17
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Select$2f$Select$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Select$3e$__["Select"], {
@@ -3384,34 +3557,34 @@ const AddRiskForm = ()=>{
                                                         ]
                                                     }, user.id, true, {
                                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                        lineNumber: 1576,
+                                                        lineNumber: 1680,
                                                         columnNumber: 21
                                                     }, this))
                                             }, void 0, false, {
                                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                                lineNumber: 1570,
+                                                lineNumber: 1674,
                                                 columnNumber: 17
                                             }, this)
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                        lineNumber: 1568,
+                                        lineNumber: 1672,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                    lineNumber: 1567,
+                                    lineNumber: 1671,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                            lineNumber: 1391,
+                            lineNumber: 1495,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 1390,
+                        lineNumber: 1494,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$DialogActions$2f$DialogActions$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__DialogActions$3e$__["DialogActions"], {
@@ -3421,7 +3594,7 @@ const AddRiskForm = ()=>{
                                 children: "Cancel"
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 1586,
+                                lineNumber: 1690,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Button$2f$Button$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
@@ -3431,19 +3604,19 @@ const AddRiskForm = ()=>{
                                 children: isLoading ? 'Adding...' : 'Add Incident'
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                                lineNumber: 1587,
+                                lineNumber: 1691,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                        lineNumber: 1585,
+                        lineNumber: 1689,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                lineNumber: 1388,
+                lineNumber: 1492,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Snackbar$2f$Snackbar$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Snackbar$3e$__["Snackbar"], {
@@ -3463,22 +3636,22 @@ const AddRiskForm = ()=>{
                     children: snackbar.message
                 }, void 0, false, {
                     fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                    lineNumber: 1604,
+                    lineNumber: 1708,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-                lineNumber: 1598,
+                lineNumber: 1702,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/app/(DashboardLayout)/risk-managment/create-risk/[id]/page.jsx",
-        lineNumber: 546,
+        lineNumber: 595,
         columnNumber: 5
     }, this);
 };
-_s(AddRiskForm, "VMfzy4WKGKGVP8j4zgK+Jty10qo=", false, function() {
+_s(AddRiskForm, "lmtbghFfruCVSZRBeTRn/WY3Ilw=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$styles$2f$useTheme$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__useTheme$3e$__["useTheme"],
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRouter"],

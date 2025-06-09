@@ -182,7 +182,7 @@ const AddRiskForm = () => {
   "STRATEGIC_EXECUTION_RISK"
 ]
 
-tertiaryRisk = [
+const tertiaryRisk = [
   "DATA_BREACH",
   "SYSTEM_FAILURE",
   "REGULATORY_NON_COMPLIANCE",
