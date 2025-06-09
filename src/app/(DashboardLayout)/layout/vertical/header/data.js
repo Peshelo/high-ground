@@ -72,19 +72,19 @@ const profile = [
 const appsLink = [
   {
     href: "/",
-    title: "Chat Application",
+    title: "My Compliance",
     subtext: "New messages arrived",
     avatar: "/images/svgs/icon-dd-chat.svg",
   },
   {
     href: "/",
-    title: "eCommerce App",
+    title: "My HRI",
     subtext: "New stock available",
     avatar: "/images/svgs/icon-dd-cart.svg",
   },
   {
     href: "/",
-    title: "Notes App",
+    title: "Critical Services",
     subtext: "To-do and Daily tasks",
     avatar: "/images/svgs/icon-dd-invoice.svg",
   },
@@ -96,7 +96,7 @@ const appsLink = [
   },
   {
     href: "/",
-    title: "Contact Application",
+    title: "Business Plan",
     subtext: "2 Unsaved Contacts",
     avatar: "/images/svgs/icon-dd-mobile.svg",
   },
@@ -108,13 +108,13 @@ const appsLink = [
   },
   {
     href: "/",
-    title: "Email App",
+    title: "Actions",
     subtext: "Get new emails",
     avatar: "/images/svgs/icon-dd-message-box.svg",
   },
   {
     href: "/",
-    title: "Blog App",
+    title: "Audit Details",
     subtext: "added new blog",
     avatar: "/images/svgs/icon-dd-application.svg",
   },

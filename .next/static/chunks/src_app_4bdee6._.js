@@ -79,19 +79,19 @@ const profile = [
 const appsLink = [
     {
         href: "/",
-        title: "Chat Application",
+        title: "My Compliance",
         subtext: "New messages arrived",
         avatar: "/images/svgs/icon-dd-chat.svg"
     },
     {
         href: "/",
-        title: "eCommerce App",
+        title: "My HRI",
         subtext: "New stock available",
         avatar: "/images/svgs/icon-dd-cart.svg"
     },
     {
         href: "/",
-        title: "Notes App",
+        title: "Critical Services",
         subtext: "To-do and Daily tasks",
         avatar: "/images/svgs/icon-dd-invoice.svg"
     },
@@ -103,7 +103,7 @@ const appsLink = [
     },
     {
         href: "/",
-        title: "Contact Application",
+        title: "Business Plan",
         subtext: "2 Unsaved Contacts",
         avatar: "/images/svgs/icon-dd-mobile.svg"
     },
@@ -115,13 +115,13 @@ const appsLink = [
     },
     {
         href: "/",
-        title: "Email App",
+        title: "Actions",
         subtext: "Get new emails",
         avatar: "/images/svgs/icon-dd-message-box.svg"
     },
     {
         href: "/",
-        title: "Blog App",
+        title: "Audit Details",
         subtext: "added new blog",
         avatar: "/images/svgs/icon-dd-application.svg"
     }
@@ -1855,9 +1855,9 @@ const AppDD = ()=>{
                     color: (theme)=>theme.palette.text.secondary
                 },
                 variant: "text",
-                href: "/apps/chats",
+                href: "",
                 component: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"],
-                children: "Chat"
+                children: "My Tasks"
             }, void 0, false, {
                 fileName: "[project]/src/app/(DashboardLayout)/layout/vertical/header/Navigation.jsx",
                 lineNumber: 114,
@@ -1869,9 +1869,9 @@ const AppDD = ()=>{
                     color: (theme)=>theme.palette.text.secondary
                 },
                 variant: "text",
-                href: "/apps/calendar",
+                href: "",
                 component: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"],
-                children: "Calendar"
+                children: "Critical Libraries"
             }, void 0, false, {
                 fileName: "[project]/src/app/(DashboardLayout)/layout/vertical/header/Navigation.jsx",
                 lineNumber: 123,
@@ -1883,9 +1883,9 @@ const AppDD = ()=>{
                     color: (theme)=>theme.palette.text.secondary
                 },
                 variant: "text",
-                href: "/apps/email",
+                href: "",
                 component: __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"],
-                children: "Email"
+                children: "Reporting"
             }, void 0, false, {
                 fileName: "[project]/src/app/(DashboardLayout)/layout/vertical/header/Navigation.jsx",
                 lineNumber: 132,
@@ -2032,7 +2032,7 @@ const MobileRightSidebar = ()=>{
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         variant: "subtitle2",
                                         fontWeight: 600,
-                                        children: "Calendar"
+                                        children: "My Tasks"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/layout/vertical/header/MobileRightSidebar.jsx",
                                         lineNumber: 60,
@@ -2074,7 +2074,7 @@ const MobileRightSidebar = ()=>{
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         variant: "subtitle2",
                                         fontWeight: 600,
-                                        children: "Email"
+                                        children: "Critical Libraries"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/layout/vertical/header/MobileRightSidebar.jsx",
                                         lineNumber: 70,
@@ -2115,7 +2115,7 @@ const MobileRightSidebar = ()=>{
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Typography$2f$Typography$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         variant: "subtitle2",
                                         fontWeight: 600,
-                                        children: "Apps"
+                                        children: "Reports"
                                     }, void 0, false, {
                                         fileName: "[project]/src/app/(DashboardLayout)/layout/vertical/header/MobileRightSidebar.jsx",
                                         lineNumber: 80,

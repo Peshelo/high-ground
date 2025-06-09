@@ -115,28 +115,28 @@ const AppDD = () => {
         color="inherit"
         sx={{ color: (theme) => theme.palette.text.secondary }}
         variant="text"
-        href="/apps/chats"
+        href=""
         component={Link}
       >
-        Chat
+       My Tasks
       </Button>
       <Button
         color="inherit"
         sx={{ color: (theme) => theme.palette.text.secondary }}
         variant="text"
-        href="/apps/calendar"
+        href=""
         component={Link}
       >
-        Calendar
+        Critical Libraries
       </Button>
       <Button
         color="inherit"
         sx={{ color: (theme) => theme.palette.text.secondary }}
         variant="text"
-        href="/apps/email"
+        href=""
         component={Link}
       >
-        Email
+        Reporting
       </Button>
     </>
   );

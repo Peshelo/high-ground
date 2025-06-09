@@ -58,7 +58,7 @@ const MobileRightSidebar = () => {
             </ListItemIcon>
             <ListItemText>
               <Typography variant="subtitle2" fontWeight={600}>
-                Calendar
+                My Tasks
               </Typography>
             </ListItemText>
           </ListItemButton>
@@ -68,7 +68,7 @@ const MobileRightSidebar = () => {
             </ListItemIcon>
             <ListItemText>
               <Typography variant="subtitle2" fontWeight={600}>
-                Email
+                Critical Libraries
               </Typography>
             </ListItemText>
           </ListItemButton>
@@ -78,7 +78,7 @@ const MobileRightSidebar = () => {
             </ListItemIcon>
             <ListItemText>
               <Typography variant="subtitle2" fontWeight={600}>
-                Apps
+                Reports
               </Typography>
             </ListItemText>
             {open ? (

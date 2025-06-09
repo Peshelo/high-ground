@@ -153,6 +153,49 @@ const AddRiskForm = () => {
   affectedBusinessUnitIds: [
   ]
   });
+  const primaryRisk =[
+  "STRATEGIC_RISK",
+  "OPERATIONAL_RISK",
+  "PEOPLE_RISK",
+  "FINANCIAL_RISK",
+  "COMPLIANCE_RISK",
+  "TECHNOLOGY_RISK",
+  "REPUTATIONAL_RISK",
+  "CYBER_SECURITY_RISK",
+  "MARKET_RISK",
+  "CREDIT_RISK",
+  "LIQUIDITY_RISK",
+  "DATA_PRIVACY_RISK",
+  "LEGAL_RISK",
+  "ENVIRONMENTAL_RISK",
+  "NONE"
+]
+
+  const secondaryRisk = [
+  "GORVANANCE_RISK",
+  "FINACIAL_REPORTING_RISK",
+  "CAPITAL_ADEQUACY_RISK",
+  "MARKET_RISK",
+  "EARNINGS_RISK",
+  "TAXATION_RISK",
+  "CLIMATE_RELATED_FINANCIAL_RISK",
+  "STRATEGIC_EXECUTION_RISK"
+]
+
+tertiaryRisk = [
+  "DATA_BREACH",
+  "SYSTEM_FAILURE",
+  "REGULATORY_NON_COMPLIANCE",
+  "SUPPLY_CHAIN_DISRUPTION",
+  "MARKET_VOLATILITY",
+  "REPUTATIONAL_DAMAGE",
+  "OPERATIONAL_RISK",
+  "FINANCIAL_RISK",
+  "LEGAL_RISK",
+  "ENVIRONMENTAL_RISK",
+  "CYBER_ATTACK",
+  "NONE"
+]
 
   // Form state
   const [formData, setFormData] = React.useState({
@@ -161,6 +204,9 @@ const AddRiskForm = () => {
     type: 'OPERATIONAL',
     status: 'DRAFT',
     priority: 'MEDIUM',
+    primaryRisk: 'PEOPLE_RISK',
+    secondaryRisk: 'GORVANANCE_RISK',
+    tertiaryRisk: 'DATA_BREACH',
     version: 1,
     categoryId: 0,
     ownerId: 0,
@@ -261,6 +307,9 @@ const AddRiskForm = () => {
           title: riskData.title || '',
           type: riskData.type || 'OPERATIONAL',
           categoryId: riskData.categoryId || 0,
+          primaryRisk: riskData.primaryRisk || '',
+          secondaryRisk: riskData.secondaryRisk || '',
+          tertiaryRisk: riskData.tertiaryRisk || '',
           ownerId: riskData.ownerId || 0,
           inherentProbability: riskData.inherentProbability || 50,
           inherentImpact: riskData.inherentImpact || 50,
@@ -655,6 +704,61 @@ const handleNextTab = () => {
                   <MenuItem value="HIGH">High</MenuItem>
                   <MenuItem value="MEDIUM">Medium</MenuItem>
                   <MenuItem value="LOW">Low</MenuItem>
+                </Select>
+              </FormControl>
+            </Grid>
+             <Grid item xs={12} md={6}>
+              <FormControl fullWidth>
+                <InputLabel>Primary Risk</InputLabel>
+                <Select
+                  value={formData.primaryRisk}
+                  label="Primary Risk"
+                  onChange={handleChange('primaryRisk')}
+                >
+                 {
+                  primaryRisk.map((risk) => (
+                    <MenuItem key={risk} value={risk}>
+                      {risk.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase())}
+                    </MenuItem>
+                  ))
+                 }
+                </Select>
+              </FormControl>
+            </Grid>
+             <Grid item xs={12} md={6}>
+              <FormControl fullWidth>
+                <InputLabel>Secondary Risk</InputLabel>
+                <Select
+                  value={formData.secondaryRisk}
+                  label="Secondary Risk"
+                  onChange={handleChange('secondaryRisk')}
+                >
+                  {
+                    secondaryRisk.map((risk) => (
+                      <MenuItem key={risk} value={risk}>
+                        {risk.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase())}
+                      </MenuItem>
+                    ))
+
+                  }
+                </Select>
+              </FormControl>
+            </Grid>
+             <Grid item xs={12} md={6}>
+              <FormControl fullWidth>
+                <InputLabel>Tertiary Risk</InputLabel>
+                <Select
+                  value={formData.tertiaryRisk}
+                  label="Tertiary Risk"
+                  onChange={handleChange('tertiaryRisk')}
+                >
+               {
+                  tertiaryRisk.map((risk) => (
+                    <MenuItem key={risk} value={risk}>
+                      {risk.replace(/_/g, ' ').toLowerCase().replace(/\b\w/g, c => c.toUpperCase())}
+                    </MenuItem>
+                  ))
+               }
                 </Select>
               </FormControl>
             </Grid>
