@@ -52,6 +52,7 @@ import {
   IconDeviceFloppy,
   IconArrowRight
 } from '@tabler/icons-react';
+import PBTRiskMatrix from '@/app/components/risk-managment/RiskRatingMatrix';
 
 // API Service
 const apiBaseUrl = 'http://4.222.232.224/api/v1';
@@ -108,7 +109,16 @@ const AddRiskForm = () => {
   // Modal states
   const [openControlModal, setOpenControlModal] = React.useState(false);
   const [openIncidentModal, setOpenIncidentModal] = React.useState(false);
-  
+
+
+  const handleRiskRatingResult = (result) => {
+    setFormData(prev => ({
+      ...prev,
+      inherentProbability: result.probability,
+      inherentImpact: result.impact
+    }));
+    // setSnackbar({ open: true, message: 'Risk rating updated successfully', severity: 'success' });
+  };
   // New entity states
   const [newControl, setNewControl] = React.useState({
     riskId: params.id,
@@ -849,7 +859,8 @@ const handleNextTab = () => {
               <Typography variant="subtitle1" gutterBottom>
                 Inherent Risk Assessment
               </Typography>
-              
+              <PBTRiskMatrix onChange={handleRiskRatingResult}/>
+{/*               
               <Box sx={{ mb: 2 }}>
                 <Typography variant="body2" gutterBottom>
                   Probability (1-100): {formData.inherentProbability}
@@ -861,8 +872,8 @@ const handleNextTab = () => {
                   max={100}
                   valueLabelDisplay="auto"
                 />
-              </Box>
-              
+              </Box> */}
+{/*               
               <Box sx={{ mb: 2 }}>
                 <Typography variant="body2" gutterBottom>
                   Impact (1-100): {formData.inherentImpact}
@@ -874,10 +885,10 @@ const handleNextTab = () => {
                   max={100}
                   valueLabelDisplay="auto"
                 />
-              </Box>
+              </Box> */}
               
-              <Box sx={{ mb: 2 }}>
-                <Typography variant="body2">Risk Rating:</Typography>
+              {/* <Box sx={{ mb: 2 }}>
+                <Typography variant="body2">Risk Rating: {formData.inherentProbability}</Typography>
                 <Chip
                   label={calculateRiskRating()}
                   color={
@@ -887,7 +898,7 @@ const handleNextTab = () => {
                   }
                   sx={{ fontWeight: 'bold' }}
                 />
-              </Box>
+              </Box> */}
             </Grid>
             
             <Grid item xs={12} md={6}>

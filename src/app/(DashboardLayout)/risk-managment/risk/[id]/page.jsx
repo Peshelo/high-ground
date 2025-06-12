@@ -43,6 +43,7 @@ import {
   IconClipboardList,
   IconBuilding
 } from '@tabler/icons-react';
+import PBTRiskMatrix from '@/app/components/risk-managment/RiskRatingMatrix';
 
 // API Service
 const apiBaseUrl = 'http://4.222.232.224/api/v1';

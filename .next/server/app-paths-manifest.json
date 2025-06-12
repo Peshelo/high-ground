@@ -1,5 +1,8 @@
 {
   "/(DashboardLayout)/page": "app/(DashboardLayout)/page.js",
+  "/(DashboardLayout)/sample-page/page": "app/(DashboardLayout)/sample-page/page.js",
   "/(DashboardLayout)/risk-managment/page": "app/(DashboardLayout)/risk-managment/page.js",
-  "/(DashboardLayout)/risk-managment/create-risk/[id]/page": "app/(DashboardLayout)/risk-managment/create-risk/[id]/page.js"
+  "/(DashboardLayout)/risk-managment/risk/[id]/page": "app/(DashboardLayout)/risk-managment/risk/[id]/page.js",
+  "/(DashboardLayout)/risk-managment/create-risk/[id]/page": "app/(DashboardLayout)/risk-managment/create-risk/[id]/page.js",
+  "/(DashboardLayout)/risk-managment/risk-categories/page": "app/(DashboardLayout)/risk-managment/risk-categories/page.js"
 }

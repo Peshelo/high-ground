@@ -134,7 +134,7 @@ const ViewRiskPage = ()=>{
         setActiveTab(newValue);
     };
     const handleEdit = ()=>{
-        router.push(`/risk-management/risk/${params.id}/edit`);
+        router.push(`/risk-managment/risk/${params.id}`);
     };
     const handlePrint = ()=>{
         window.print();
@@ -196,7 +196,7 @@ const ViewRiskPage = ()=>{
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Button$2f$Button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
                         variant: "outlined",
-                        onClick: ()=>router.push('/risk-management'),
+                        onClick: ()=>router.push('/risk-managment'),
                         startIcon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tabler$2f$icons$2d$react$2f$dist$2f$esm$2f$icons$2f$IconArrowLeft$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__IconArrowLeft$3e$__["IconArrowLeft"], {
                             size: "1.1rem"
                         }, void 0, false, {
@@ -251,22 +251,6 @@ const ViewRiskPage = ()=>{
                             }, void 0, false, {
                                 fileName: "[project]/src/app/(DashboardLayout)/risk-managment/risk/[id]/page.jsx",
                                 lineNumber: 179,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$mui$2f$material$2f$Button$2f$Button$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__Button$3e$__["Button"], {
-                                variant: "contained",
-                                onClick: handleEdit,
-                                startIcon: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$server$2f$future$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f40$tabler$2f$icons$2d$react$2f$dist$2f$esm$2f$icons$2f$IconEdit$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__IconEdit$3e$__["IconEdit"], {
-                                    size: "1.1rem"
-                                }, void 0, false, {
-                                    fileName: "[project]/src/app/(DashboardLayout)/risk-managment/risk/[id]/page.jsx",
-                                    lineNumber: 185,
-                                    columnNumber: 24
-                                }, void 0),
-                                children: "Edit Risk"
-                            }, void 0, false, {
-                                fileName: "[project]/src/app/(DashboardLayout)/risk-managment/risk/[id]/page.jsx",
-                                lineNumber: 182,
                                 columnNumber: 11
                             }, this)
                         ]
